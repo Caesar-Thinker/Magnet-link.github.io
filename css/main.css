@@ -1691,7 +1691,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #bb042e;
+  background: #81ff25;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2541,8 +2541,6 @@ embed {
 首页头部样式,
 .header {
   background: url("/images/jinx.png");
-  height: 399px;
-  width: 1348px;
 }
 .site-title {
   display: inline-block;

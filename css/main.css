@@ -1691,7 +1691,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #36f79d;
+  background: #88d701;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2542,7 +2542,7 @@ embed {
 .header {
   background: url("/images/jinx.png");
   height: 399px;
-  width: 1209px;
+  width: 1350px;
 }
 .site-title {
   display: inline-block;
@@ -2551,5 +2551,5 @@ embed {
   font-size: 28px;
   font-weight: normal;
   font-family: "Lucida Grande", Lucida Sans Unicode, Hrragino Sans GB, WenQuanYi Micro Hei, Verdana, Aril, sans-serif;
-  color: #fff;
+  color: #f11;
 }

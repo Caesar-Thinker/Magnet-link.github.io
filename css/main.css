@@ -1691,7 +1691,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #21dfff;
+  background: #36f79d;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2540,7 +2540,9 @@ embed {
 }
 首页头部样式,
 .header {
-  background: url("/images/saber.jpg");
+  background: url("/images/jinx.png");
+  height: 399px;
+  width: 1209px;
 }
 .site-title {
   display: inline-block;
@@ -2548,6 +2550,6 @@ embed {
   line-height: 36px;
   font-size: 28px;
   font-weight: normal;
-  font-family: "Microsoft YaHei", sans-serif;
+  font-family: "Lucida Grande", Lucida Sans Unicode, Hrragino Sans GB, WenQuanYi Micro Hei, Verdana, Aril, sans-serif;
   color: #fff;
 }

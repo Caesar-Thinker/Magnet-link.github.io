@@ -1691,7 +1691,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #81ff25;
+  background: #ddf05e;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2538,9 +2538,9 @@ embed {
 .links-of-blogroll-inline .links-of-blogroll-item {
   display: inline-block;
 }
-首页头部样式,
 .header {
   background: url("/images/jinx.png");
+  width: 1348px;
 }
 .site-title {
   display: inline-block;
@@ -2549,5 +2549,5 @@ embed {
   font-size: 28px;
   font-weight: normal;
   font-family: "Lucida Grande", Lucida Sans Unicode, Hrragino Sans GB, WenQuanYi Micro Hei, Verdana, Aril, sans-serif;
-  color: f11;
+  color: #f11;
 }

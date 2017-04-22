@@ -1691,7 +1691,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #b595c4;
+  background: #21dfff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2538,21 +2538,16 @@ embed {
 .links-of-blogroll-inline .links-of-blogroll-item {
   display: inline-block;
 }
-.post {
-  margin-top: 60px;
-  margin-bottom: 60px;
-  padding: 25px;
-  -webkit-box-shadow: 0 0 14px rgba(202,203,203,0.5);
-  -moz-box-shadow: 0 0 14px rgba(202,203,204,0.5);
-}
-.ds-top-threads li a {
-  padding-left: 5px;
-  transition: border-width 0.2s linear 0s, color 0.2s linear 0s;
-  border-bottom: none;
-}
-.ds-top-threads li a:hover {
-  border-left: 8px solid #4d768c;
-}
+首页头部样式,
 .header {
-  background: url("/images/jinx.png");
+  background: url("/images/saber.jpg");
+}
+.site-title {
+  display: inline-block;
+  vertical-align: top;
+  line-height: 36px;
+  font-size: 28px;
+  font-weight: normal;
+  font-family: "Microsoft YaHei", sans-serif;
+  color: #fff;
 }

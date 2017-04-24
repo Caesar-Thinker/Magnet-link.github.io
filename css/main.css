@@ -1691,7 +1691,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #fff;
+  background: #ffd79e;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2541,7 +2541,7 @@ embed {
 .header {
   background: url("/images/jinx.png");
   width: 1348px;
-  height: 339px;
+  height: 399px;
 }
 .site-title {
   display: inline-block;

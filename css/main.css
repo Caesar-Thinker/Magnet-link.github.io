@@ -1691,7 +1691,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff0a39;
+  background: #fff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2550,5 +2550,8 @@ embed {
   font-size: 28px;
   font-weight: normal;
   font-family: "Lucida Grande", Lucida Sans Unicode, Hrragino Sans GB, WenQuanYi Micro Hei, Verdana, Aril, sans-serif;
+  color: #f11;
+}
+a {
   color: #f11;
 }

@@ -1,0 +1,1010 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="css," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="CSS布局总结###写在前面  最近总结了一下css布局方面的知识，也做了相应的练习，查了些资料，当然也可能有很多地方没有考虑到，想的是在学习过程中不断更新这篇博文，博文在写的过程中也掺杂了一点自己的理解，若有错误或者不恰当的地方，烦请指教。">
+<meta name="keywords" content="css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css布局总结笔记">
+<meta property="og:url" content="http://Yaer23.github.io/2017/10/28/css布局总结笔记/index.html">
+<meta property="og:site_name" content="Lydia Lee">
+<meta property="og:description" content="CSS布局总结###写在前面  最近总结了一下css布局方面的知识，也做了相应的练习，查了些资料，当然也可能有很多地方没有考虑到，想的是在学习过程中不断更新这篇博文，博文在写的过程中也掺杂了一点自己的理解，若有错误或者不恰当的地方，烦请指教。">
+<meta property="og:image" content="http://oofwms1or.bkt.clouddn.com/%E4%B8%89%E6%A0%8F%E5%BC%8F%E5%B8%83%E5%B1%80.png">
+<meta property="og:image" content="http://oofwms1or.bkt.clouddn.com/padding+float.png">
+<meta property="og:image" content="http://oofwms1or.bkt.clouddn.com/margin-left.png">
+<meta property="og:image" content="http://oofwms1or.bkt.clouddn.com/relative.png">
+<meta property="og:image" content="http://oofwms1or.bkt.clouddn.com/shuangfeiyi.png">
+<meta property="og:updated_time" content="2017-10-28T12:27:11.497Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="css布局总结笔记">
+<meta name="twitter:description" content="CSS布局总结###写在前面  最近总结了一下css布局方面的知识，也做了相应的练习，查了些资料，当然也可能有很多地方没有考虑到，想的是在学习过程中不断更新这篇博文，博文在写的过程中也掺杂了一点自己的理解，若有错误或者不恰当的地方，烦请指教。">
+<meta name="twitter:image" content="http://oofwms1or.bkt.clouddn.com/%E4%B8%89%E6%A0%8F%E5%BC%8F%E5%B8%83%E5%B1%80.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://Yaer23.github.io/2017/10/28/css布局总结笔记/"/>
+
+
+
+
+
+  <title> css布局总结笔记 | Lydia Lee </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?41fc030db57d5570dd22f78997dc4a7e";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Lydia Lee</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">On the way to</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://Yaer23.github.io/2017/10/28/css布局总结笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lydia Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/头像.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lydia Lee">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                css布局总结笔记
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-28T20:25:04+08:00">
+                2017-10-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/10/28/css布局总结笔记/" class="leancloud_visitors" data-flag-title="css布局总结笔记">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  1,466
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="CSS布局总结"><a href="#CSS布局总结" class="headerlink" title="CSS布局总结"></a>CSS布局总结</h1><p>###写在前面<br>  最近总结了一下css布局方面的知识，也做了相应的练习，查了些资料，当然也可能有很多地方没有考虑到，想的是在学习过程中不断更新这篇博文，博文在写的过程中也掺杂了一点自己的理解，若有错误或者不恰当的地方，烦请指教。</p>
+<a id="more"></a> 
+<h2 id="绝对定位与浮动"><a href="#绝对定位与浮动" class="headerlink" title="绝对定位与浮动"></a>绝对定位与浮动</h2><h3 id="绝对定位与浮动都会“block”化元素"><a href="#绝对定位与浮动都会“block”化元素" class="headerlink" title="绝对定位与浮动都会“block”化元素"></a>绝对定位与浮动都会“block”化元素</h3><ul>
+<li>绝对定位：绝对定位后的元素生成一个块级框，而不论原来它在正常流中生成何种类型的框。（css绝对定位）</li>
+<li>浮动：“block”化元素是指：行内元素在设置浮动后，会拥有块级元素的部分特性，可以设置高宽等，其实质上还是行内元素。<h3 id="脱离文档流"><a href="#脱离文档流" class="headerlink" title="脱离文档流"></a>脱离文档流</h3></li>
+<li>使用float脱离文档流时，其他盒子会无视这个元素，但其他盒子内的文本依然会为这个元素让出位置，环绕在周围，可实现文字环绕图片的效果。</li>
+<li><p>使用absolute positioning脱离文档流的元素，其他盒子与其他盒子内的文本都会无视它。</p>
+<h3 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h3><p>元素脱离文档流后可能导致父容器塌陷，这个时候需要清除浮动避免塌陷。</p>
+</li>
+<li><p>clearfix清除浮动</p>
+</li>
+<li><p>overflow:hidden清除浮动(父容器溢出隐藏)</p>
+<h2 id="圣杯与双飞翼（三栏式布局）"><a href="#圣杯与双飞翼（三栏式布局）" class="headerlink" title="圣杯与双飞翼（三栏式布局）"></a>圣杯与双飞翼（三栏式布局）</h2><h5 id="圣杯与双飞翼是在做IFE百度前端小薇学院的三栏式布局的时候了解到的，通过尝试不同种布局，查阅了一些资料后，发现这个题比较好的解决方法就是圣杯布局。"><a href="#圣杯与双飞翼是在做IFE百度前端小薇学院的三栏式布局的时候了解到的，通过尝试不同种布局，查阅了一些资料后，发现这个题比较好的解决方法就是圣杯布局。" class="headerlink" title="圣杯与双飞翼是在做IFE百度前端小薇学院的三栏式布局的时候了解到的，通过尝试不同种布局，查阅了一些资料后，发现这个题比较好的解决方法就是圣杯布局。"></a>圣杯与双飞翼是在做IFE百度前端小薇学院的三栏式布局的时候了解到的，通过尝试不同种布局，查阅了一些资料后，发现这个题比较好的解决方法就是圣杯布局。</h5></li>
+<li><p>目的：两边定宽中间自适应</p>
+</li>
+<li>中心思想：<ul>
+<li>中间栏宽度设为100%独占一行</li>
+<li>为左右栏的“拉升”腾出空间（实现圣杯与双飞翼的不同之处）</li>
+<li>用margin-left负值将左右栏分别拉升回与中间栏同一高度的左右两边</li>
+</ul>
+</li>
+<li>需要注意的地方<ul>
+<li>对中间栏进行优先渲染</li>
+<li>圣杯基本布局之后需要做一些适当的调整实现具体布局要求，比如相对定位左右栏的位置进行优化</li>
+<li>在使用布局的时候要考虑盒子的border属性，必要时用到box-sizing:border-box；</li>
+</ul>
+</li>
+</ul>
+<h3 id="任务描述"><a href="#任务描述" class="headerlink" title="任务描述"></a>任务描述</h3><p>注：图片来自<a href="http://ife.baidu.com/course/detail/id/94" target="_blank" rel="external">IFE百度前端小薇学院三栏式布局</a></p>
+<p><img src="http://oofwms1or.bkt.clouddn.com/%E4%B8%89%E6%A0%8F%E5%BC%8F%E5%B8%83%E5%B1%80.png" alt="三栏式布局"></p>
+<h3 id="圣杯布局的具体实现："><a href="#圣杯布局的具体实现：" class="headerlink" title="圣杯布局的具体实现："></a>圣杯布局的具体实现：</h3><ul>
+<li>中间栏宽度设为100%独占一行</li>
+<li><strong>设置父容器的左右padding值</strong>为左右栏的“拉升”腾出空间</li>
+<li>用margin-left负值将左右栏分别拉升回与中间栏同一水平高度的左右两边</li>
+<li>使用相对定位设置左右栏的位置</li>
+</ul>
+<p>注：代码只截取了重要部分</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">/*这是html代码*/</div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"header"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"container"</span>&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"center"</span> <span class="attr">class</span>=<span class="string">"column"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"left"</span> <span class="attr">class</span>=<span class="string">"column"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"right"</span> <span class="attr">class</span>=<span class="string">"column"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"footer"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>第一步：给中间栏设置宽度为100%，并设置父容器的左右padding值。给三栏加上浮动，并清除浮动使得父容器高度不塌陷<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*这是最初的css样式（截取了关键部分）*/</span></div><div class="line"></div><div class="line"><span class="selector-id">#container</span> &#123;</div><div class="line">    <span class="attribute">padding-left</span>: <span class="number">240px</span>;        <span class="comment">/* 左栏宽度+两倍padding值 */</span></div><div class="line">    <span class="attribute">padding-right</span>: <span class="number">160px</span>;       <span class="comment">/* 右栏宽度+两倍padding值 */</span></div><div class="line">    <span class="attribute">background</span>: <span class="number">#eee</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-id">#container</span> <span class="selector-class">.column</span>&#123;</div><div class="line">    <span class="attribute">float</span>:left;</div><div class="line">&#125;</div><div class="line"><span class="selector-id">#container</span><span class="selector-pseudo">::after</span>&#123;      <span class="comment">/* 防止父容器高度塌陷 */</span></div><div class="line">    <span class="attribute">content</span>: <span class="string">''</span>;</div><div class="line">    <span class="attribute">display</span>: block;</div><div class="line">    <span class="attribute">clear</span>: both;</div><div class="line">&#125;</div><div class="line"><span class="selector-id">#center</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;        <span class="comment">/* 中间栏宽度设为100% */</span></div><div class="line">&#125;</div><div class="line"><span class="selector-id">#left</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;       <span class="comment">/* 左栏宽度固定 */</span>  </div><div class="line">&#125;</div><div class="line"><span class="selector-id">#right</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">120px</span>;       <span class="comment">/* 右栏宽度固定 */</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>效果如下：<br><img src="http://oofwms1or.bkt.clouddn.com/padding+float.png" alt="float+padding"></p>
+<p>第二步：将左右栏分别拉升到与中间栏同一水平高度<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#left</span>&#123;</div><div class="line">    <span class="attribute">margin-left</span>: -<span class="number">100%</span>;         <span class="comment">/* 负的100% */</span></div><div class="line">&#125;</div><div class="line"><span class="selector-id">#right</span>&#123;</div><div class="line">    <span class="attribute">margin-right</span>: -<span class="number">120px</span>;       <span class="comment">/* 负的右栏宽 */</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>效果如下：<br><img src="http://oofwms1or.bkt.clouddn.com/margin-left.png" alt="拉升左右栏"></p>
+<p>第三步：使用相对定位设置左右栏的位置<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#container</span> <span class="selector-class">.column</span>&#123;</div><div class="line">    <span class="attribute">position</span>: relative;</div><div class="line">&#125;</div><div class="line"><span class="selector-id">#left</span>&#123;</div><div class="line">    <span class="attribute">right</span>:<span class="number">220px</span>;    <span class="comment">/* 左栏向左平移到适当位置 */</span></div><div class="line">&#125;</div><div class="line"><span class="selector-id">#right</span>&#123;</div><div class="line">    <span class="attribute">left</span>:<span class="number">20px</span>;      <span class="comment">/* 右栏向右平移到适当位置 */</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>效果如下：<br><img src="http://oofwms1or.bkt.clouddn.com/relative.png" alt="圣杯"></p>
+<p>基本上三栏式布局就完成啦~ 再设置一些内外边距值就可以达到效果Demo</p>
+<h3 id="双飞翼的具体实现："><a href="#双飞翼的具体实现：" class="headerlink" title="双飞翼的具体实现："></a>双飞翼的具体实现：</h3><p>与圣杯的相同之处不再赘述，不同点在于：</p>
+<ul>
+<li><strong>给中间栏再设置一个div，给div设置左右margin值</strong>为左右栏的“拉升”腾出空间</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">/*这是html代码*/</div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"header"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"container"</span>&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"center"</span> <span class="attr">class</span>=<span class="string">"column"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"wrap"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>       /* 添加的div */</div><div class="line">   <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"left"</span> <span class="attr">class</span>=<span class="string">"column"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"right"</span> <span class="attr">class</span>=<span class="string">"column"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"footer"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#wrap</span>&#123;</div><div class="line">    <span class="attribute">margin-left</span>: <span class="number">220px</span>;         <span class="comment">/* 腾出左边部分 */</span></div><div class="line">    <span class="attribute">margin-right</span>: <span class="number">140px</span>;        <span class="comment">/* 腾出右边部分 */</span></div><div class="line">    <span class="attribute">padding</span>: <span class="number">20px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>实现效果：<br><img src="http://oofwms1or.bkt.clouddn.com/shuangfeiyi.png" alt="双飞翼"><br>双飞翼的缺点在于中间栏的高度只适应新添加的div的高度，当左右栏高度超出中间的高度，就会有上图的情况出现，而圣杯布局可以适应三栏中任意最高的高度。</p>
+<h2 id="居中"><a href="#居中" class="headerlink" title="居中"></a>居中</h2><h3 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h3><ul>
+<li>text-align:center;只能适用于行内元素,块状元素可以通过改变元素的display属性（display:inline-block或者display:inline）</li>
+<li>固定宽度的块状元素设置margin:0 auto;使其居中显示<h3 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h3></li>
+<li>单行行内元素，设置行高（line-height）与height一致</li>
+<li>多行行内元素或者文字与图片一行用vertical-align:center;</li>
+<li>块状元素，父元素相对布局，子元素绝对定位（top:50%），再设置偏移（margin-top:子元素高度的一半）</li>
+<li>若子元素高度未知，将margin改为transform:translateY(-50%);<h3 id="水平垂直居中"><a href="#水平垂直居中" class="headerlink" title="水平垂直居中"></a>水平垂直居中</h3></li>
+<li>跟块状元素垂直居中的思路一样，父元素相对布局，子元素绝对定位（top:50%;left:50%;）,再设置偏移量（margin-top:子元素高度的一半;margin-left:子元素宽度的一半）</li>
+<li>子元素高度未知，将两个margin改为transform:translate(-50%,-50%);</li>
+</ul>
+<p>注意：transform是css3的内容，需要考虑兼容性</p>
+<h2 id="负margin"><a href="#负margin" class="headerlink" title="负margin"></a>负margin</h2><p>边学边总结。。</p>
+<h2 id="Flexbox布局"><a href="#Flexbox布局" class="headerlink" title="Flexbox布局"></a>Flexbox布局</h2><h2 id="grid"><a href="#grid" class="headerlink" title="grid"></a>grid</h2>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/css/" rel="tag"># css</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/06/11/宫崎骏电影/" rel="prev" title="宫崎骏电影">
+                宫崎骏电影 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/头像.jpg"
+               alt="Lydia Lee" />
+          <p class="site-author-name" itemprop="name">Lydia Lee</p>
+           
+              <p class="site-description motion-element" itemprop="description">Rules are made to be broken... like buildings,Or people</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Yaer23" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/Yaer23" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://wpa.qq.com/msgrd?v=3&uin=770631546&site=qq&menu=yes" target="_blank" title="QQ">
+                  
+                    <i class="fa fa-fw fa-qq"></i>
+                  
+                  QQ
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=139774&auto=1&height=66"></iframe>
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS布局总结"><span class="nav-number">1.</span> <span class="nav-text">CSS布局总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#绝对定位与浮动"><span class="nav-number">1.1.</span> <span class="nav-text">绝对定位与浮动</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#绝对定位与浮动都会“block”化元素"><span class="nav-number">1.1.1.</span> <span class="nav-text">绝对定位与浮动都会“block”化元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#脱离文档流"><span class="nav-number">1.1.2.</span> <span class="nav-text">脱离文档流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#清除浮动"><span class="nav-number">1.1.3.</span> <span class="nav-text">清除浮动</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#圣杯与双飞翼（三栏式布局）"><span class="nav-number">1.2.</span> <span class="nav-text">圣杯与双飞翼（三栏式布局）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#圣杯与双飞翼是在做IFE百度前端小薇学院的三栏式布局的时候了解到的，通过尝试不同种布局，查阅了一些资料后，发现这个题比较好的解决方法就是圣杯布局。"><span class="nav-number">1.2.0.0.1.</span> <span class="nav-text">圣杯与双飞翼是在做IFE百度前端小薇学院的三栏式布局的时候了解到的，通过尝试不同种布局，查阅了一些资料后，发现这个题比较好的解决方法就是圣杯布局。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务描述"><span class="nav-number">1.2.1.</span> <span class="nav-text">任务描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#圣杯布局的具体实现："><span class="nav-number">1.2.2.</span> <span class="nav-text">圣杯布局的具体实现：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#双飞翼的具体实现："><span class="nav-number">1.2.3.</span> <span class="nav-text">双飞翼的具体实现：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#居中"><span class="nav-number">1.3.</span> <span class="nav-text">居中</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#水平居中"><span class="nav-number">1.3.1.</span> <span class="nav-text">水平居中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#垂直居中"><span class="nav-number">1.3.2.</span> <span class="nav-text">垂直居中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#水平垂直居中"><span class="nav-number">1.3.3.</span> <span class="nav-text">水平垂直居中</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#负margin"><span class="nav-number">1.4.</span> <span class="nav-text">负margin</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Flexbox布局"><span class="nav-number">1.5.</span> <span class="nav-text">Flexbox布局</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#grid"><span class="nav-number">1.6.</span> <span class="nav-text">grid</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Lydia Lee</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("vzi1KhadhBc24FxaOaFo6DDQ-gzGzoHsz", "eJUa2rrJJib8dVV6tHqTVnyh");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+	<a href="https://github.com/Yaer23"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/82b228a3648bf44fc1163ef44c62fcc60081495e/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png"></a>
+</body>
+</html>
